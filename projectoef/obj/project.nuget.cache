@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ooHeYa4Zg59seoE3aE7rImJaEukjil+cq7yVoLzRkfHkuoiciZhgS/06UGnHtdkcVDHmwlAwR8dxOxhM9RN+1w==",
+  "dgSpecHash": "i1sKzxMV9pfGAGeIULtDSsFoZKLY4Ngv/oQyyV2d7ajQQybzDiBmNJjkr9leybMeESB5ylr9D4QXaVqJPohFpw==",
   "success": true,
-  "projectFilePath": "C:\\platzi\\projectoef\\projectoef.csproj",
+  "projectFilePath": "C:\\platzi\\platzi\\projectoef\\proyectoef.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Aldo Noel Benitez\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\Aldo Noel Benitez\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
