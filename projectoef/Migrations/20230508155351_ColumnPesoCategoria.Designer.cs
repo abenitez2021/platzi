@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using proyectoef;
 
@@ -11,9 +12,11 @@ using proyectoef;
 namespace proyectoef.Migrations
 {
     [DbContext(typeof(TareasContext))]
-    partial class TareasContextModelSnapshot : ModelSnapshot
+    [Migration("20230508155351_ColumnPesoCategoria")]
+    partial class ColumnPesoCategoria
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -29,6 +32,7 @@ namespace proyectoef.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Descripcion")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Nombre")
@@ -45,22 +49,6 @@ namespace proyectoef.Migrations
                     b.HasKey("CategoriaId");
 
                     b.ToTable("Categoria", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            CategoriaId = new Guid("c3345a24-b7fd-4a22-859d-520f99f4eafb"),
-                            Nombre = "actividades pendientes",
-                            Peso = 20,
-                            volumen = 10
-                        },
-                        new
-                        {
-                            CategoriaId = new Guid("c3345a24-b7fd-4a22-859d-520f99f4ea02"),
-                            Nombre = "actividades personales",
-                            Peso = 20,
-                            volumen = 10
-                        });
                 });
 
             modelBuilder.Entity("proyectoef.Models.Tarea", b =>
@@ -73,6 +61,7 @@ namespace proyectoef.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Descripcion")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("FechaCreacion")
@@ -91,24 +80,6 @@ namespace proyectoef.Migrations
                     b.HasIndex("CategoriaID");
 
                     b.ToTable("Tarea", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            TareaId = new Guid("c3345a24-b7fd-4a22-859d-520f99f4ea03"),
-                            CategoriaID = new Guid("c3345a24-b7fd-4a22-859d-520f99f4eafb"),
-                            FechaCreacion = new DateTime(2023, 5, 8, 12, 22, 54, 17, DateTimeKind.Local).AddTicks(5490),
-                            PrioridadTarea = 1,
-                            Titulo = "Pago de servicios"
-                        },
-                        new
-                        {
-                            TareaId = new Guid("c3345a24-b7fd-4a22-859d-520f99f4ea04"),
-                            CategoriaID = new Guid("c3345a24-b7fd-4a22-859d-520f99f4ea02"),
-                            FechaCreacion = new DateTime(2023, 5, 8, 12, 22, 54, 17, DateTimeKind.Local).AddTicks(5522),
-                            PrioridadTarea = 0,
-                            Titulo = "terminar mi serie"
-                        });
                 });
 
             modelBuilder.Entity("proyectoef.Models.Tarea", b =>
